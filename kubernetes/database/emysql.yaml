@@ -14,10 +14,6 @@ spec:
       containers:
       - name: emysql
         image: mysql:8.0.33
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: emartdbpass
