@@ -7,5 +7,5 @@ spec:
   selector:
     app: emysql
   ports:
-  - port: 3303
+  - port: 3306
     targetPort: mysql-port
