@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emysql
+spec:
+  selector:
+    matchLabels:
+      app: emysql
+  template:
+    metadata:
+      labels:
+        app: emysql
+    spec:
+      containers:
+      - name: emysql
+        image: mysql:8.0.33
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: emartdbpass
+          - name: MYSQL_DATABASE
+            value: books
+        ports:
+        - containerPort: 3303
+          name: mysql-port
