@@ -6,6 +6,6 @@ spec:
   selector:
     app: client
   ports:
-  - port: 8080
+  - port: 4200
     targetPort: frontend-port
   
