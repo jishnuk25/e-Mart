@@ -1,27 +1,27 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: traffic-router
+  name: ingress-nginx
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /
+          - path: "/"
             pathType: prefix
             backend:
               service:
                 name: client
                 Port:
                   number: 4200
-          - path: /api
+          - path: "/api"
             pathType: prefix
             backend:
               service:
                 name: api
                 Port: 
                   number: 5000
-          - path: /webapi
+          - path: "/webapi"
             pathType: prefix
             backend:
               service:
