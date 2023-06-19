@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: webapi
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: webapi
   ports:
   - port: 9000
     targetPort: webapi-port
+
 

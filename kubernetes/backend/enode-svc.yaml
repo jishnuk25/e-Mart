@@ -8,3 +8,4 @@ spec:
   ports:
   - port: 5000
     targetPort: enode-port
+  type: NodePort
