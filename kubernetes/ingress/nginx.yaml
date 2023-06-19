@@ -8,21 +8,21 @@ spec:
     - http:
         paths:
           - path: "/"
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: client
                 port:
                   number: 4200
           - path: "/api"
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: api
                 port: 
                   number: 5000
           - path: "/webapi"
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: webapi
