@@ -12,19 +12,19 @@ spec:
             backend:
               service:
                 name: client
-                Port:
+                port:
                   number: 4200
           - path: "/api"
             pathType: prefix
             backend:
               service:
                 name: api
-                Port: 
+                port: 
                   number: 5000
           - path: "/webapi"
             pathType: prefix
             backend:
               service:
                 name: webapi
-                Port:
+                port:
                   number: 9000
