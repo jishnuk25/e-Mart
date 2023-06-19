@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traffic-router
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: prefix
+            backend:
+              serviceName: client
+              servicePort: 4200
+          - path: /api
+            pathType: prefix
+            backend:
+              serviceName: api
+              servicePort: 5000
+          - path: /webapi
+            pathType: prefix
+            backend:
+              serviceName: webapi
+              servicePort: 9000
