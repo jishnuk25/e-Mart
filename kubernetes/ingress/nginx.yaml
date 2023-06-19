@@ -2,8 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-nginx
+  annotations:
+    kubernetes.io/ingress.class: gce # creates a public loadbalancer in gke
+    kubernetes.io/ingress.global-static-ip-name: "ingress-webapps" # static public ip to use with ingress, gke attaches the static ip to the ingress loadbalancer, gcloud compute addresses create ingress-webapps --global -- creates the static ip
 spec:
-  ingressClassName: nginx
   rules:
     - http:
         paths:
